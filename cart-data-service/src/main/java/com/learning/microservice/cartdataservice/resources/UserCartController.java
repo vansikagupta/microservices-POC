@@ -3,6 +3,7 @@ package com.learning.microservice.cartdataservice.resources;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,11 +15,12 @@ import com.learning.microservice.cartdataservice.model.CartProduct;
 @RequestMapping("/cart")
 public class UserCartController {
 	
+	@Autowired
+	UserCartService userCartService;
+	
 	@RequestMapping("/{userId}")
 	public UserCart getUserCart(@PathVariable("userId") String userId)
 	{
-		List<CartProduct> cart = Arrays.asList(new CartProduct("product1",2),
-											   new CartProduct("product2",3));
-		return new UserCart(userId, cart);
+		return userCartService.getUserCart(userId);
 	}
 }

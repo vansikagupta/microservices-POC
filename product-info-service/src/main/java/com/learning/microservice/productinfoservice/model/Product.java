@@ -1,9 +1,21 @@
 package com.learning.microservice.productinfoservice.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
+	@Id
 	private String productId;
+	
+	@Column(name="ProductName")
 	private String name;
+	
+	@Column(name="ProductDesc")
 	private String desc;
+	
+	@Column(name="ProductPrice")
 	private double price;
 	
 	public Product() {}

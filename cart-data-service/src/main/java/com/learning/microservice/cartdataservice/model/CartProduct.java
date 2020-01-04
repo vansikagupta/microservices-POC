@@ -1,5 +1,8 @@
 package com.learning.microservice.cartdataservice.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class CartProduct {
 	private String productId;
 	private int count;

@@ -2,8 +2,17 @@ package com.learning.microservice.cartdataservice.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class UserCart {
+	@Id
 	private String userId;
+	@ElementCollection
+	@Column(name="CartDetails")
 	private List<CartProduct> cart;
 	
 	public UserCart() {}
