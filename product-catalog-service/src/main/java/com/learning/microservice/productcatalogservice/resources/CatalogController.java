@@ -28,9 +28,9 @@ public class CatalogController {
 		//2. for all product ids, get product details from product-info-microservice | Product => CatalogItem
 		//3. put everything together		
 		
-		 UserCart shoppingCart = restTemplate.getForObject("http://localhost:8093/cart/"+userId, UserCart.class);
+		 UserCart shoppingCart = restTemplate.getForObject("http://Cart-Data-Service/cart/"+userId, UserCart.class);
 		 return shoppingCart.getCart().stream().map(cart -> {
-			 CatalogItem product = restTemplate.getForObject("http://localhost:8092/product/"+cart.getProductId(), CatalogItem.class);
+			 CatalogItem product = restTemplate.getForObject("http://ProductInfoService/product/"+cart.getProductId(), CatalogItem.class);
 			 product.setCount(cart.getCount());
 			 return product;	 
 		 })

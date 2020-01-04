@@ -8,21 +8,24 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.learning.microservice.cartdataservice.model.CartProduct;
 import com.learning.microservice.cartdataservice.model.UserCart;
 import com.learning.microservice.cartdataservice.resources.UserCartRepo;
 
 @SpringBootApplication
+@EnableEurekaClient
 public class CartDataServiceApplication {
 	
-	@Autowired
-	UserCartRepo userCartRepo;
+	//@Autowired
+	//UserCartRepo userCartRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CartDataServiceApplication.class, args);
 	}
-	
+	/*
+	 * Only for the first run so that DB gets populated
 	@PostConstruct
     public void init(){
         List<CartProduct> cart_list1 = Arrays.asList(new CartProduct("prod1.1",2),
@@ -49,4 +52,5 @@ public class CartDataServiceApplication {
         
         userCartRepo.saveAll(userCartList);
     }
+    */
 }
