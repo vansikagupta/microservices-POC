@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,9 @@ import com.learning.microservice.productcatalogservice.model.Cart;
 import com.learning.microservice.productcatalogservice.model.CatalogItem;
 import com.learning.microservice.productcatalogservice.model.UserCart;
 
+
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/catalog")
 public class CatalogController {
 	
