@@ -39,5 +39,16 @@ public class UserCart {
 		this.cart = cart;
 	}
 	
+	public void addToCart(CartProduct product)
+	{
+		this.cart.add(product);
+	}
 	
+	public CartProduct getCartProduct(String productId)
+	{
+		return this.cart.stream()
+				.filter(product -> product.getProductId().equals(productId))
+				.findFirst()
+				.orElse(null);
+	}
 }
