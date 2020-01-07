@@ -1,14 +1,15 @@
-package com.learning.microservice.productinfoservice.resource;
+package com.learning.microservice.productinfoservice.service;
 
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.learning.microservice.productinfoservice.model.Product;
+import com.learning.microservice.productinfoservice.repository.ProductRepo;
 
 @Service
-public class ProductInfoService {
+public class ProductInfoServiceImpl implements ProductInfoService {
 	
 	@Autowired
 	ProductRepo productRepo;

@@ -1,4 +1,4 @@
-package com.learning.microservice.productinfoservice.resource;
+package com.learning.microservice.productinfoservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.learning.microservice.productinfoservice.model.Product;
+import com.learning.microservice.productinfoservice.service.ProductInfoService;
+import com.learning.microservice.productinfoservice.service.ProductInfoServiceImpl;
 
 @RestController
 @RequestMapping("/product")

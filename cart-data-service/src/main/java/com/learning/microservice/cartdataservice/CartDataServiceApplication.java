@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.learning.microservice.cartdataservice.model.CartProduct;
 import com.learning.microservice.cartdataservice.model.UserCart;
-import com.learning.microservice.cartdataservice.resources.UserCartRepo;
+import com.learning.microservice.cartdataservice.repository.UserCartRepo;
 
 @SpringBootApplication
 @EnableEurekaClient

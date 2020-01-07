@@ -1,4 +1,4 @@
-package com.learning.microservice.productinfoservice.resource;
+package com.learning.microservice.productinfoservice.repository;
 
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

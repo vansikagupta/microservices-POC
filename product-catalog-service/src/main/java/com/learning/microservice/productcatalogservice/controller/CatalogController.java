@@ -1,4 +1,4 @@
-package com.learning.microservice.productcatalogservice.resources;
+package com.learning.microservice.productcatalogservice.controller;
 
 import java.util.Arrays;
 import java.util.List;

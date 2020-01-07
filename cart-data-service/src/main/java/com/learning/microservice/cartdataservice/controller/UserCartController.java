@@ -1,4 +1,4 @@
-package com.learning.microservice.cartdataservice.resources;
+package com.learning.microservice.cartdataservice.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.learning.microservice.cartdataservice.model.UserCart;
+import com.learning.microservice.cartdataservice.service.UserCartService;
+import com.learning.microservice.cartdataservice.service.UserCartServiceImpl;
 import com.learning.microservice.cartdataservice.model.CartProduct;
 
 @RestController
@@ -16,7 +18,7 @@ import com.learning.microservice.cartdataservice.model.CartProduct;
 public class UserCartController {
 	
 	@Autowired
-	UserCartService userCartService;
+	private UserCartService userCartService;
 	
 	@RequestMapping("/{userId}")
 	public UserCart getUserCart(@PathVariable("userId") String userId)
